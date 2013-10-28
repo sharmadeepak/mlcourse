@@ -49,10 +49,11 @@ pause;
 % Scale features and set them to zero mean
 fprintf('Normalizing Features ...\n');
 
-[X mu sigma] = featureNormalize(X);
+%[X mu sigma] = featureNormalize(X);
 
 % Add intercept term to X
 X = [ones(m, 1) X];
+
 
 
 %% ================ Part 2: Gradient Descent ================
@@ -82,11 +83,12 @@ X = [ones(m, 1) X];
 fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
-alpha = 0.01;
+alpha = 0.0000003;
 num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(3, 1);
+%computeCostMulti(X, y, theta)
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph

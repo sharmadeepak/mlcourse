@@ -18,12 +18,13 @@ for iter = 1:num_iters
     %
 
 
-
-
-
-
-
-
+	H=X*theta;
+	H=H-y;
+for i=1:length(theta),
+    summ(:, i) = sum(H.* X(:, i));
+end;
+avg=summ/m;
+theta=theta-alpha*avg';
 
 
 
